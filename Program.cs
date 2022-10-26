@@ -1,7 +1,12 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Moldovan_Andrei.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddDbContext<Moldovan_AndreiContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Moldovan_AndreiContext") ?? throw new InvalidOperationException("Connection string 'Moldovan_AndreiContext' not found.")));
 
 var app = builder.Build();
 
