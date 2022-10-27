@@ -19,5 +19,7 @@ namespace Moldovan_Andrei.Data
         public DbSet<Moldovan_Andrei.Models.Publisher> Publisher { get; set; }
 
         public DbSet<Moldovan_Andrei.Models.Author> Author { get; set; }
+
+        public DbSet<Moldovan_Andrei.Models.Category> Category { get; set; }
     }
 }
