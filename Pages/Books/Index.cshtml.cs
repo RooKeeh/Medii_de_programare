@@ -29,6 +29,7 @@ namespace Moldovan_Andrei.Pages.Books
             BookD = new BookData();
 
             BookD.Books = await _context.Book.Include(b => b.Publisher).Include(b => b.BookCategories).ThenInclude(b => b.Category).AsNoTracking().OrderBy(b => b.Title).ToListAsync();
+            BookD.Books = await _context.Book.Include(b => b.Authors).Include(b => b.BookCategories).ThenInclude(b => b.Category).AsNoTracking().OrderBy(b => b.Title).ToListAsync();
             if (id != null)
             {
                 BookID = id.Value;
