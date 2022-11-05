@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Moldovan_Andrei.Data;
 using Moldovan_Andrei.Models;
+using Moldovan_Andrei.ViewModels;
 
 namespace Moldovan_Andrei.Pages.Categories
 {
@@ -21,7 +22,11 @@ namespace Moldovan_Andrei.Pages.Categories
 
         public IList<Category> Category { get;set; } = default!;
 
-        public async Task OnGetAsync()
+        public PublisherIndexData PublisherData { get; set; }
+        public int PublisherID { get; set; }
+        public int BookID { get; set; }
+
+        public async Task OnGetAsync(int? id, int? bookID)
         {
             if (_context.Category != null)
             {
