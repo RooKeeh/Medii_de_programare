@@ -21,5 +21,9 @@ namespace Moldovan_Andrei.Data
         public DbSet<Moldovan_Andrei.Models.Author> Author { get; set; }
 
         public DbSet<Moldovan_Andrei.Models.Category> Category { get; set; }
+
+        public DbSet<Moldovan_Andrei.Models.Member> Member { get; set; }
+
+        public DbSet<Moldovan_Andrei.Models.Borrowing> Borrowing { get; set; }
     }
 }

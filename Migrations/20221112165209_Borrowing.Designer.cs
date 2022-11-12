@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Moldovan_Andrei.Data;
 
@@ -11,9 +12,10 @@ using Moldovan_Andrei.Data;
 namespace Moldovan_Andrei.Migrations
 {
     [DbContext(typeof(Moldovan_AndreiContext))]
-    partial class Moldovan_AndreiContextModelSnapshot : ModelSnapshot
+    [Migration("20221112165209_Borrowing")]
+    partial class Borrowing
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
