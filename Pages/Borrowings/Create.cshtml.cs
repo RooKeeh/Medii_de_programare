@@ -22,19 +22,14 @@ namespace Moldovan_Andrei.Pages.Borrowings
 
         public IActionResult OnGet()
         {
-            var bookList = _context.Book
-            .Include(b => b.Authors)
-            .Select(x => new
+            var bookList = _context.Book.Include(b => b.Authors).Select(x => new
             {
                 x.ID,
-                BookFullName = x.Title + " - " + x.Authors.LastName + " " +
-           x.Authors.FirstName
+                BookFullName = x.Title + " - " + x.Authors.LastName + " " + x.Authors.FirstName
             });
 
-            ViewData["BookID"] = new SelectList(bookList, "ID",
-           "BookFullName");
-            ViewData["MemberID"] = new SelectList(_context.Member, "ID",
-           "FullName");
+            ViewData["BookID"] = new SelectList(bookList, "ID","BookFullName");
+            ViewData["MemberID"] = new SelectList(_context.Member, "ID","FullName");
             return Page();
         }
 

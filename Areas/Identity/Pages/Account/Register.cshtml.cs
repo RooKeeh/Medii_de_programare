@@ -30,16 +30,14 @@ namespace Moldovan_Andrei.Areas.Identity.Pages.Account
         private readonly IUserEmailStore<IdentityUser> _emailStore;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
-
         private readonly Moldovan_Andrei.Data.Moldovan_AndreiContext _context;
-
         public RegisterModel(
-            UserManager<IdentityUser> userManager,
-            IUserStore<IdentityUser> userStore,
-            SignInManager<IdentityUser> signInManager,
-            ILogger<RegisterModel> logger,
-            IEmailSender emailSender,
-            Moldovan_Andrei.Data.Moldovan_AndreiContext context)
+        UserManager<IdentityUser> userManager,
+        IUserStore<IdentityUser> userStore,
+        SignInManager<IdentityUser> signInManager,
+        ILogger<RegisterModel> logger,
+        IEmailSender emailSender,
+        Moldovan_Andrei.Data.Moldovan_AndreiContext context)
         {
             _userManager = userManager;
             _userStore = userStore;
@@ -49,7 +47,6 @@ namespace Moldovan_Andrei.Areas.Identity.Pages.Account
             _emailSender = emailSender;
             _context = context;
         }
-
         [BindProperty]
         public Member Member { get; set; }
 
@@ -154,7 +151,6 @@ namespace Moldovan_Andrei.Areas.Identity.Pages.Account
                
                 $"Please confirm your account by <a href = '{HtmlEncoder.Default.Encode(callbackUrl)}' > clicking here </ a >.");
            
-
                 if (_userManager.Options.SignIn.RequireConfirmedAccount)
                 {
                     return RedirectToPage("RegisterConfirmation", new
