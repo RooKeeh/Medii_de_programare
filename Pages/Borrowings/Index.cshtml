@@ -29,23 +29,27 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Borrowing) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Member.FullName)
-            </td>
-             <td>
-                 @Html.DisplayFor(modelItem => item.Book.Title)
-             </td>
-            <td>
-                 @Html.DisplayFor(modelItem => item.Book.Authors.FullName)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.Borrowing)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Member.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Book.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Book.Authors.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Book.Borrowing.ReturnDate)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

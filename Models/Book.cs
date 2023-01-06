@@ -21,6 +21,7 @@ namespace Moldovan_Andrei.Models
         public Publisher? Publisher { get; set; }
         public int? AuthorsID { get; set; }
         public Author? Authors { get; set; }
+        public Borrowing? Borrowing { get; set; }
         public ICollection<BookCategory>? BookCategories { get; set; }
     }
 }
